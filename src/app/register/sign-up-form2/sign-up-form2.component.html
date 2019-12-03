@@ -1,0 +1,16 @@
+<div class="space space-component vtop hleft background-transparent">
+  <label class="text text-basic label">Full name</label>
+  <input nbInput class="input" placeholder="" fieldSize="medium" type="text" shape="rectangle" fullWidth>
+  <label class="text text-basic label">Email</label>
+  <input nbInput [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" class="input" placeholder="" fieldSize="medium" type="text" shape="rectangle" fullWidth>
+  <label class="text text-basic label">Password</label>
+  <input nbInput [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" class="input" placeholder="" fieldSize="medium" type="password" shape="rectangle" fullWidth>
+  <a routerLink="/Login" class="text-primary">Already have an account? Sign in</a>
+  <nb-card-footer class="slot">
+    <div class="space space-component vcenter hcenter col-md-12 background-transparent">
+      <button nbButton (click)="register(user)" size="medium" appearance="filled" status="success" fullWidth>
+        Register
+      </button>
+    </div>
+  </nb-card-footer>
+</div>

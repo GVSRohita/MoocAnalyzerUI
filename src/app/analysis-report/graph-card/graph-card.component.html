@@ -1,0 +1,19 @@
+<nb-card class="card" accent="primary">
+  <nb-card-header class="slot">
+    <div class="space space-component vcenter hcenter col-md-12 background-transparent">
+      <h6 class="text-basic">Link for the video</h6>
+    </div>
+  </nb-card-header>
+
+  <nb-card-body class="slot">
+<!--    <div class="space space-component vtop hleft col-md-12 background-transparent">-->
+<!--      <bk-line-chart class="multiple-axis-chart" [data]="data" ></bk-line-chart>-->
+<!--      <bk-line-chart class="multiple-axis-chart" [data]="data"></bk-line-chart>-->
+<!--    </div>-->
+    <div class="space-component vtop hleft col-md-12 background-transparent">
+      <button  class="btn btn-outline-primary" type="button" (click)="isLoading = !isLoading">Toggle Loading</button>
+      <hr>
+      <div echarts [options]="options" [loading]="isLoading" theme="macarons" class="demo-chart"></div>
+    </div>
+  </nb-card-body>
+</nb-card>

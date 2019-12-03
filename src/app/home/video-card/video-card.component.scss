@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  width: 75%;
+}
+
+.space-component {
+  height: auto;
+  min-height: 3rem;
+  overflow: visible;
+}
+
+.link {
+  margin: 0 0 0 4px;
+}
+
+.card {
+  width: 100%;
+}
+
+#video, #canvas {
+  display: none;
+}

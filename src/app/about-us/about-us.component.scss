@@ -1,0 +1,26 @@
+
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.space-component {
+  height: auto;
+  min-height: 3rem;
+  overflow: visible;
+}
+
+.card {
+  width: calc(100% - 32px);
+  margin: 16px;
+}
+
+.link {
+  margin: 0 16px 0 0;
+}
+
+.link1 {
+  margin: 0 8px 0 16px;
+}
