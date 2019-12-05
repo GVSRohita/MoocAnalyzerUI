@@ -22,6 +22,7 @@ export class SignUpForm2Component {
     var route = this.router;
     try {
       this.firebaseauth.auth.createUserWithEmailAndPassword(user.email, user.password).then(function () {
+        console.log(this.firebaseauth.auth.currentUser.uid);
         route.navigate(['/Login']);
         user.email = '';
         user.password = '';

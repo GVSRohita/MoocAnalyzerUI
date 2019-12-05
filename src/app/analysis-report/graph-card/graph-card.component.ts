@@ -9,25 +9,6 @@ import {AngularFireAuth} from '@angular/fire/auth';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GraphCardComponent implements OnInit {
-  // data =   {
-  //   income: [
-  //     -180,
-  //     30,
-  //     -43,
-  //     19,
-  //     -24,
-  //     -59,
-  //     50,
-  //     -10
-  //   ],
-  //   outcome: [
-  //     10,20,30,40,50,60,70
-  //   ],
-  //   profit: [100,200,30,40,50,60,70]
-  // };
-  // options: {
-  //   '1','2','3'
-  // };
   result: any;
   public constructor(private httpClient: HttpClient, private firebaseauth: AngularFireAuth) {
     this.isLoading = true;
@@ -39,25 +20,16 @@ export class GraphCardComponent implements OnInit {
   x_axis_keys = [];
   y_axis_values = [];
   options = {};
-
-  load() {
-    this.capture();
-    }
   public capture() {
-    this.httpClient.get('http://localhost:3001/videos/WsesxRjXQDc' + '/users/' + this.firebaseauth.auth.currentUser.uid + '/emotions').toPromise().then(data => {
-      this.result = data;
-      this.charts(data);
-
+    this.httpClient.get('http://localhost:3001/videos/iF8dRePlPUo' + '/users/' + this.firebaseauth.auth.currentUser.uid + '/emotions').toPromise().then(data => {
+    this.result = data;
+    this.charts(data);
     });
   }
   ngOnInit() {
-
     this.isLoading = true;
     this.capture();
   }
-
-
-
   charts(data) {
     this.x_axis_keys = Object.keys(data);
     this.y_axis_values = Object.values(data);
@@ -85,7 +57,7 @@ export class GraphCardComponent implements OnInit {
           type: 'category',
           boundaryGap: false,
           data: [this.x_axis_keys[0], this.x_axis_keys[1], this.x_axis_keys[2], this.x_axis_keys[3], this.x_axis_keys[4],
-            this.x_axis_keys[5], this.x_axis_keys[6], this.x_axis_keys[7], this.x_axis_keys[8], this.x_axis_keys[9]]
+            this.x_axis_keys[5], this.x_axis_keys[6], this.x_axis_keys[7], this.x_axis_keys[8]]
         }
       ],
       yAxis: [
@@ -102,7 +74,7 @@ export class GraphCardComponent implements OnInit {
           stack: 'counts',
           areaStyle: { normal: {} },
           data: [this.y_axis_values[0]['anger'], this.y_axis_values[1]['anger'], this.y_axis_values[2]['anger'], this.y_axis_values[3]['anger'], this.y_axis_values[4]['anger'],
-            this.y_axis_values[5]['anger'], this.y_axis_values[6]['anger'], this.y_axis_values[7]['anger'], this.y_axis_values[8]['anger'], this.y_axis_values[9]['anger']]
+            this.y_axis_values[5]['anger'], this.y_axis_values[6]['anger'], this.y_axis_values[7]['anger'], this.y_axis_values[8]['anger']]
         },
         {
           name: 'Contempt',
@@ -110,7 +82,7 @@ export class GraphCardComponent implements OnInit {
           stack: 'counts',
           areaStyle: { normal: {} },
           data: [this.y_axis_values[0]['contempt'], this.y_axis_values[1]['contempt'], this.y_axis_values[2]['contempt'], this.y_axis_values[3]['contempt'], this.y_axis_values[4]['contempt'],
-            this.y_axis_values[5]['contempt'], this.y_axis_values[6]['contempt'], this.y_axis_values[7]['contempt'], this.y_axis_values[8]['contempt'], this.y_axis_values[9]['contempt']]
+            this.y_axis_values[5]['contempt'], this.y_axis_values[6]['contempt'], this.y_axis_values[7]['contempt'], this.y_axis_values[8]['contempt']]
         },
         {
           name: 'Disgust',
@@ -119,7 +91,7 @@ export class GraphCardComponent implements OnInit {
           areaStyle: { normal: {} },
           data: [
             this.y_axis_values[0]['disgust'], this.y_axis_values[1]['disgust'], this.y_axis_values[2]['disgust'], this.y_axis_values[3]['disgust'], this.y_axis_values[4]['disgust'],
-            this.y_axis_values[5]['disgust'], this.y_axis_values[6]['disgust'], this.y_axis_values[7]['disgust'], this.y_axis_values[8]['disgust'], this.y_axis_values[9]['disgust']
+            this.y_axis_values[5]['disgust'], this.y_axis_values[6]['disgust'], this.y_axis_values[7]['disgust'], this.y_axis_values[8]['disgust']
           ]
         },
         {
@@ -128,7 +100,7 @@ export class GraphCardComponent implements OnInit {
           stack: 'counts',
           areaStyle: { normal: {} },
           data: [this.y_axis_values[0]['fear'], this.y_axis_values[1]['fear'], this.y_axis_values[2]['fear'], this.y_axis_values[3]['fear'], this.y_axis_values[4]['fear'],
-            this.y_axis_values[5]['fear'], this.y_axis_values[6]['fear'], this.y_axis_values[7]['fear'], this.y_axis_values[8]['fear'], this.y_axis_values[9]['fear']]
+            this.y_axis_values[5]['fear'], this.y_axis_values[6]['fear'], this.y_axis_values[7]['fear'], this.y_axis_values[8]['fear']]
         },
         {
           name: 'Happiness',
@@ -136,7 +108,7 @@ export class GraphCardComponent implements OnInit {
           stack: 'counts',
           areaStyle: { normal: {} },
           data: [this.y_axis_values[0]['happiness'], this.y_axis_values[1]['happiness'], this.y_axis_values[2]['happiness'], this.y_axis_values[3]['happiness'], this.y_axis_values[4]['happiness'],
-            this.y_axis_values[5]['happiness'], this.y_axis_values[6]['happiness'], this.y_axis_values[7]['happiness'], this.y_axis_values[8]['happiness'], this.y_axis_values[9]['happiness']]
+            this.y_axis_values[5]['happiness'], this.y_axis_values[6]['happiness'], this.y_axis_values[7]['happiness'], this.y_axis_values[8]['happiness']]
         },
         {
           name: 'Neutral',
@@ -144,7 +116,7 @@ export class GraphCardComponent implements OnInit {
           stack: 'counts',
           areaStyle: { normal: {} },
           data: [this.y_axis_values[0]['neutral'], this.y_axis_values[1]['neutral'], this.y_axis_values[2]['neutral'], this.y_axis_values[3]['neutral'], this.y_axis_values[4]['neutral'],
-            this.y_axis_values[5]['neutral'], this.y_axis_values[6]['neutral'], this.y_axis_values[7]['neutral'], this.y_axis_values[8]['neutral'], this.y_axis_values[9]['neutral']]
+            this.y_axis_values[5]['neutral'], this.y_axis_values[6]['neutral'], this.y_axis_values[7]['neutral'], this.y_axis_values[8]['neutral']]
         },
         {
           name: 'Sadness',
@@ -152,7 +124,7 @@ export class GraphCardComponent implements OnInit {
           stack: 'counts',
           areaStyle: { normal: {} },
           data: [this.y_axis_values[0]['sadness'], this.y_axis_values[1]['sadness'], this.y_axis_values[2]['sadness'], this.y_axis_values[3]['sadness'], this.y_axis_values[4]['sadness'],
-            this.y_axis_values[5]['sadness'], this.y_axis_values[6]['sadness'], this.y_axis_values[7]['sadness'], this.y_axis_values[8]['sadness'], this.y_axis_values[9]['sadness']]
+            this.y_axis_values[5]['sadness'], this.y_axis_values[6]['sadness'], this.y_axis_values[7]['sadness'], this.y_axis_values[8]['sadness']]
         },
         {
           name: 'Surprise',
@@ -160,7 +132,7 @@ export class GraphCardComponent implements OnInit {
           stack: 'counts',
           areaStyle: { normal: {} },
           data: [this.y_axis_values[0]['surprise'], this.y_axis_values[1]['surprise'], this.y_axis_values[2]['surprise'], this.y_axis_values[3]['surprise'], this.y_axis_values[4]['surprise'],
-            this.y_axis_values[5]['surprise'], this.y_axis_values[6]['surprise'], this.y_axis_values[7]['surprise'], this.y_axis_values[8]['surprise'], this.y_axis_values[9]['surprise']]
+            this.y_axis_values[5]['surprise'], this.y_axis_values[6]['surprise'], this.y_axis_values[7]['surprise'], this.y_axis_values[8]['surprise']]
         }
       ]};
 

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {AngularFireAuth} from '@angular/fire/auth';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,10 @@ import {Router} from '@angular/router';
 export class HeaderComponent {
   isloggedIn: boolean;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, private firebaseauth: AngularFireAuth) { }
   logout() {
-    this.isloggedIn = true;
+    this.firebaseauth.auth.signOut();
+    this.router.navigate(['/Login']);
   }
   ngOnInit() {
   }

@@ -30,13 +30,14 @@ export class VideoCardComponent implements OnInit {
 
   //Youtube player
   player: YT.Player;
-  private id: string = 'WsesxRjXQDc';
+  private id: string = 'iF8dRePlPUo';
   public time_interval: number;
   public total_duration: number;
 
   savePlayer(player) {
     this.player = player;
     console.log('player instance', player);
+    console.log('auth', this.firebaseauth.auth.currentUser.uid);
   }
   onStateChange(event) {
     console.log('player state', event.data);

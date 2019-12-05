@@ -20,8 +20,12 @@ export class SignUpForm3Component {
     try {
       this.firebaseauth.auth.signInWithEmailAndPassword(user.email, user.password).then(() => {
         console.log(this.firebaseauth.auth.currentUser.uid);
-        this.router.navigate(['/Home']);
-
+        if (this.firebaseauth.auth.currentUser.uid === 'eLTrMz1F49bQeF3vVkwegHjpE9q2') {
+          this.router.navigate(['/AdminHome']);
+        }
+        else {
+          this.router.navigate(['/Home']);
+        }
         // this.navCtrl.push(HomePage);
       }).catch(() => {
         alert('Try again. Invalid Credentials');

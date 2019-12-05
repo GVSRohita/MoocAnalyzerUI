@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'MoreInfo', loadChildren: './more-info/more-info.module#MoreInfoModule' },
   { path: 'AboutUs', loadChildren: './about-us/about-us.module#AboutUsModule' },
   { path: 'Home', loadChildren: './home/home.module#HomeModule' },
+  { path: 'AdminHome', loadChildren: './home/adminhome.module#AdminHomeModule' },
   { path: 'AnalysisReport', loadChildren: './analysis-report/analysis-report.module#AnalysisReportModule' },
   { path: '', redirectTo: 'Register', pathMatch: 'full' },
 ];

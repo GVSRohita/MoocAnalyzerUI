@@ -6,7 +6,7 @@
     <a routerLink="/MoreInfo" class="link text-primary" style="color: white">More Info</a>
     <p class="text-basic paragraph" style="color: white">|</p>
     <a routerLink="/AboutUs" class="link1 right text-primary" style="color: white">About Us</a>
-    <button  nbButton *ngIf="router.url == '/Home' || router.url == '/AnalysisReport' " size="medium" appearance="filled" status="success" style=" margin-right: 12px" (click)="logout()">
+    <button  nbButton *ngIf="router.url == '/Home' || router.url == '/AnalysisReport' || router.url == '/AdminHome' " size="medium" appearance="filled" status="success" style=" margin-right: 12px" (click)="logout()">
         Log out
     </button>
   </div>
