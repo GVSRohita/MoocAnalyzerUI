@@ -30,7 +30,7 @@ export class VideoCardComponent implements OnInit {
 
   //Youtube player
   player: YT.Player;
-  private id: string = 'iF8dRePlPUo';
+  public id: string = 'iF8dRePlPUo';
   public time_interval: number;
   public total_duration: number;
 
