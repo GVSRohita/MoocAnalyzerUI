@@ -22,7 +22,7 @@ export class GraphCardAdminComponent implements OnInit {
   options = {};
   initOptions = {};
   public capture() {
-    this.httpClient.get('http://localhost:3001/videos/iF8dRePlPUo' + '/users' + '/emotions').toPromise().then(data => {
+    this.httpClient.get('https://mooc-analyzer-services.herokuapp.com/videos/iF8dRePlPUo' + '/users' + '/emotions').toPromise().then(data => {
 //Contempt', 'Disgust', 'Fear', 'Happiness', 'Neutral', 'Sadness', 'Surprise
       var sum_anger = 0;
       var sum_contempt = 0;

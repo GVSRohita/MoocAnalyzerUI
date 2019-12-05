@@ -21,7 +21,7 @@ export class GraphCardComponent implements OnInit {
   y_axis_values = [];
   options = {};
   public capture() {
-    this.httpClient.get('http://localhost:3001/videos/iF8dRePlPUo' + '/users/' + this.firebaseauth.auth.currentUser.uid + '/emotions').toPromise().then(data => {
+    this.httpClient.get('https://mooc-analyzer-services.herokuapp.com/videos/iF8dRePlPUo' + '/users/' + this.firebaseauth.auth.currentUser.uid + '/emotions').toPromise().then(data => {
     this.result = data;
     this.charts(data);
     });

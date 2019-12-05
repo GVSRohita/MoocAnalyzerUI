@@ -76,7 +76,7 @@ export class VideoCardComponent implements OnInit {
     // this.happiness;
     // var image = "{"image": "+ base64image + "}";
 
-    this.httpClient.post('http://localhost:3001/videos/' + this.id + '/users/' + this.firebaseauth.auth.currentUser.uid + '/emotions?time=' + time, data).toPromise().then(data => {
+    this.httpClient.post('https://mooc-analyzer-services.herokuapp.com/videos/' + this.id + '/users/' + this.firebaseauth.auth.currentUser.uid + '/emotions?time=' + time, data).toPromise().then(data => {
       console.log(data);
       // this.happiness = data[0].faceAttributes.emotion.happiness;
 
